@@ -1,3 +1,13 @@
 [build]
   publish = "_site"
-  command = "DEBUG=* eleventy"
+  command = "eleventy"
+
+[[plugins]]
+package = "netlify-plugin-checklinks"
+
+  [plugins.inputs]
+
+  # Report on all broken links to external pages.
+  # Enabling this will make your tests more brittle, since you can't control
+  # external pages.
+  checkExternal = true
